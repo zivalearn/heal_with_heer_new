@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Alex+Brush&family=Caveat:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-script: "Alex Brush", cursive;
+  --font-cursive: "Caveat", cursive;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f4ebd0;
+  
+  --color-ocean-dark: #072a3a;
+  --color-ocean: #0a3d54;
+  --color-ocean-light: #165e7d;
+  
+  --color-teal-soft: #4f9da6;
+  --color-teal-light: #bde0e5;
+  --color-aqua-light: #e6f4f6;
+  
+  --color-sage: #8fa89b;
+  --color-sage-light: #c2d3cd;
+  --color-cream: #faf7f2;
+  --color-ivory: #fdfcf7;
+}
+
+/* Custom styles to add luxurious watercolor vibes and smooth animation timings */
+.watercolor-bg {
+  background: radial-gradient(circle at 30% 30%, rgba(190, 224, 229, 0.45) 0%, rgba(224, 237, 233, 0.45) 40%, rgba(250, 247, 242, 0.1) 80%);
+}
+
+.watercolor-teal {
+  background: radial-gradient(circle, rgba(189, 224, 229, 0.6) 0%, rgba(189, 224, 229, 0.1) 70%);
+}
+
+.watercolor-sage {
+  background: radial-gradient(circle, rgba(194, 211, 205, 0.6) 0%, rgba(194, 211, 205, 0.1) 70%);
+}
+
+.watercolor-gold {
+  background: radial-gradient(circle, rgba(244, 235, 208, 0.6) 0%, rgba(244, 235, 208, 0.1) 70%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) translateX(5px) rotate(4deg); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) translateX(-4px) rotate(-3deg); }
+}
+
+@keyframes floatSway {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(-2deg); }
+  50% { transform: translateY(-15px) translateX(12px) rotate(5deg); }
+}
+
+@keyframes floatRotate {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow var(--float-duration, 15s) ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium var(--float-duration, 12s) ease-in-out infinite;
+}
+
+.animate-float-sway {
+  animation: floatSway var(--float-duration, 18s) ease-in-out infinite;
+}
+
+.animate-float-rotate {
+  animation: floatRotate var(--float-duration, 25s) linear infinite;
+}
+
+.floating-leaf {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-leaf-reverse {
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+/* For beautiful arch paths used in cards */
+.arch-card-frame {
+  border-top-left-radius: 120px;
+  border-top-right-radius: 120px;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* ============================================================================
+   CELESTIAL CONSTELLATION ATLAS CUSTOM ANIMATIONS
+   ============================================================================ */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@keyframes breatheGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.75);
+  }
+}
+
+.animate-breathe-glow {
+  animation: breatheGlow var(--breathe-duration, 5s) ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: starTwinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+}
+
+@keyframes driftSlow {
+  0% { transform: translate(0, 0); opacity: 0.2; }
+  50% { transform: translate(15px, -15px); opacity: 0.6; }
+  100% { transform: translate(0, 0); opacity: 0.2; }
+}
+
+.animate-drift {
+  animation: driftSlow var(--drift-duration, 12s) ease-in-out infinite;
+}
+
+@keyframes orbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-orbit-rotate {
+  animation: orbitRotate 180s linear infinite;
+}
+
+@keyframes orbitRotateReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-orbit-reverse {
+  animation: orbitRotateReverse 240s linear infinite;
+}
+
+@keyframes strokeFlow {
+  0% { stroke-dashoffset: 15; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-stroke-flow {
+  stroke-dasharray: 5, 3;
+  animation: strokeFlow 1.5s linear infinite;
+}
+
+/* ============================================================================
+   HEAL WITH HEER - PREMIUM DESIGN SYSTEM STANDARD CLASSES
+   ============================================================================ */
+
+.hwh-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;
+  letter-spacing: 0.25em; /* tracking-[0.25em] */
+  color: var(--color-gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hwh-section-heading {
+  font-family: var(--font-serif);
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: var(--color-ocean-dark);
+}
+@media (min-width: 768px) {
+  .hwh-section-heading {
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+.hwh-hero-heading {
+  font-family: var(--font-serif);
+  font-size: 2.5rem; /* text-4xl */
+  line-height: 2.75rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-ocean-dark);
+}
+@media (min-width: 640px) {
+  .hwh-hero-heading {
+    font-size: 3rem; /* text-5xl */
+    line-height: 3.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .hwh-hero-heading {
+    font-size: 3.75rem; /* text-6xl */
+    line-height: 4.25rem;
+  }
+}
+
+.hwh-subheading {
+  font-family: var(--font-serif);
+  font-size: 1.125rem; /* text-lg */
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-ocean-light);
+}
+@media (min-width: 768px) {
+  .hwh-subheading {
+    font-size: 1.25rem; /* text-xl */
+  }
+}
+
+.hwh-paragraph {
+  font-family: var(--font-sans);
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.7; /* leading-relaxed */
+  font-weight: 300; /* font-light */
+  color: #1a353d; /* rich deep contrast navy/charcoal for premium readability */
+}
+@media (min-width: 768px) {
+  .hwh-paragraph {
+    font-size: 0.95rem; /* slightly refined premium size */
+  }
+}
+
+/* Primary CTA Button System */
+.hwh-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: var(--color-ocean);
+  color: var(--color-cream);
+  border: 1px solid rgba(212, 175, 55, 0.45); /* gold border */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(7, 42, 58, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.hwh-button-primary:hover {
+  background-color: var(--color-ocean-dark);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 20px -5px rgba(7, 42, 58, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Secondary CTA Button System */
+.hwh-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--color-ocean);
+  border: 1px solid rgba(10, 61, 84, 0.4);
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.hwh-button-secondary:hover {
+  background-color: var(--color-ocean);
+  color: var(--color-cream);
+  border-color: var(--color-ocean);
+  transform: translateY(-2px);
+}
+
+/* Standard Premium Card Component */
+.hwh-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 1.5rem; /* rounded-2xl */
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px -2px rgba(7, 42, 58, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hwh-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  box-shadow: 0 20px 35px -10px rgba(7, 42, 58, 0.1);
+}
+
+/* Decorative Gold Divider */
+.hwh-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+.hwh-divider-line {
+  height: 1px;
+  width: 3.5rem; /* w-14 */
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.45), transparent);
+}
+.hwh-divider-star {
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Standardized Icon Size and Outer Circle Container */
+.hwh-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem; /* 56px */
+  height: 3.5rem;
+  border-radius: 9999px; /* full circle */
+  background-color: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+.hwh-icon-container:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+  border-color: var(--color-gold);
+}
+.hwh-icon {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+  stroke-width: 1.5px;
+}
+
+
+/* ============================================================================
+   HEAL WITH HEER - MASTER DESIGN SYSTEM OVERRIDES (ENFORCEMENT PASS)
+   ============================================================================ */
+
+/* 1. Global High-Contrast Reading Copy & Typography Alignment */
+p:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]):not([class*="text-[#"]):not([class*="text-gold"]):not([class*="text-cream"]):not([class*="text-gray-100"]):not([class*="text-gray-200"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not(footer p), 
+.text-slate-500:not(.text-white), 
+.text-gray-500:not(.text-white), 
+.text-zinc-500:not(.text-white), 
+.text-\[\#4a6b72\]:not(.text-white),
+.text-\[\#2c4759\]:not(.text-white) {
+  color: #1a353d; /* Rich deep charcoal-navy with maximum readability contrast for default light background text */
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Explicit Footer Light High-Contrast Text Rules for Dark Background */
+#footer-section,
+#footer-section p,
+#footer-section a,
+#footer-section button,
+#footer-section span,
+#footer-section li {
+  color: #c5dcd0;
+}
+#footer-section h4 {
+  color: #ffffff !important;
+}
+#footer-section a:hover,
+#footer-section button:hover {
+  color: #ffffff !important;
+}
+
+/* Ensure paragraph sizing is consistently premium */
+p {
+  font-size: 0.95rem !important;
+}
+@media (max-width: 640px) {
+  p {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* 2. Eyebrow Labels Standardizer */
+.font-mono.uppercase.tracking-widest,
+.font-mono.uppercase.tracking-\[0\.3em\],
+.font-mono.uppercase.tracking-\[0\.25em\],
+span[class*="tracking-wide"][class*="uppercase"][class*="text-gold"],
+span[class*="tracking-widest"][class*="uppercase"] {
+  font-size: 0.7rem !important; /* Perfect refined text-[11px] */
+  font-weight: 700 !important;
+  letter-spacing: 0.25em !important;
+  color: var(--color-gold) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.75rem !important;
+  display: inline-block !important;
+}
+
+/* 3. Hero Heading Standardizer */
+h1.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), .hwh-hero-heading {
+  font-family: var(--font-serif) !important;
+  font-size: 2.25rem !important; /* Mobile */
+  line-height: 1.15 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--color-ocean-dark) !important;
+}
+@media (min-width: 640px) {
+  h1.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), .hwh-hero-heading {
+    font-size: 2.75rem !important;
+  }
+}
+@media (min-width: 768px) {
+  h1.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), .hwh-hero-heading {
+    font-size: 3.25rem !important;
+  }
+}
+@media (min-width: 1024px) {
+  h1.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), .hwh-hero-heading {
+    font-size: 3.75rem !important; /* Perfect elegant screen header scale */
+  }
+}
+
+/* 4. Section Heading Standardizer */
+h2.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), 
+.hwh-section-heading {
+  font-family: var(--font-serif) !important;
+  font-size: 1.875rem !important; /* Mobile */
+  line-height: 1.25 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--color-ocean-dark) !important;
+  margin-bottom: 1rem !important;
+}
+@media (min-width: 768px) {
+  h2.font-serif:not(.text-white):not(.text-cream):not(.text-gold):not(.text-gold-light):not([class*="text-white"]), 
+  .hwh-section-heading {
+    font-size: 2.25rem !important; /* Consistent section title size (36px) */
+  }
+}
+
+/* 5. Subheading Standardizer */
+h3.font-serif.italic:not(.text-white):not(.text-cream):not(.text-gold):not([class*="text-white"]):not([class*="text-[#FAF5EB]"]), 
+.font-serif.italic:not(.text-white):not(.text-cream):not(.text-gold):not([class*="text-white"]):not([class*="text-[#FAF5EB]"]), 
+.hwh-subheading {
+  font-family: var(--font-serif) !important;
+  font-size: 1.125rem !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: var(--color-ocean-light) !important;
+  margin-bottom: 1.5rem !important;
+}
+@media (min-width: 768px) {
+  h3.font-serif.italic, 
+  .font-serif.italic, 
+  .hwh-subheading {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* 6. Primary Button Standardization Pass */
+button.bg-ocean, 
+button.bg-ocean-dark, 
+button.bg-\[\#0a3d54\], 
+button.bg-\[\#0B2F3A\],
+button.bg-\[\#072a3a\],
+button.bg-\[\#0a252c\] {
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important; /* text-xs */
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  border-radius: 0.75rem !important; /* 12px rounded-xl */
+  padding: 1rem 2rem !important;
+  color: var(--color-cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important; /* Subtle gold accent */
+  box-shadow: 0 4px 6px -1px rgba(7, 42, 58, 0.08) !important;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+button.bg-ocean:hover, 
+button.bg-ocean-dark:hover, 
+button.bg-\[\#0a3d54\]:hover, 
+button.bg-\[\#0B2F3A\]:hover,
+button.bg-\[\#072a3a\]:hover,
+button.bg-\[\#0a252c\]:hover {
+  background-color: var(--color-ocean-dark) !important;
+  color: var(--color-gold) !important;
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 12px 20px -5px rgba(7, 42, 58, 0.18) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+}
+
+/* 7. Secondary Button Standardization Pass */
+button.border-ocean, 
+button.border-ocean\/15, 
+button.border-ocean\/20, 
+button.border-ocean\/30,
+button.border-\[\#dfdbc9\]\/60 {
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem 2rem !important;
+  background-color: transparent !important;
+  color: var(--color-ocean) !important;
+  border: 1px solid rgba(10, 61, 84, 0.4) !important;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+button.border-ocean:hover, 
+button.border-ocean\/15:hover, 
+button.border-ocean\/20:hover, 
+button.border-ocean\/30:hover,
+button.border-\[\#dfdbc9\]\/60:hover {
+  background-color: var(--color-ocean) !important;
+  color: var(--color-cream) !important;
+  border-color: var(--color-ocean) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+}
+
+/* 8. Card Standardization Pass */
+.card-standard, 
+div[class*="bg-white"][class*="border"][class*="rounded-"],
+div[class*="bg-white/"][class*="border"][class*="rounded-"] {
+  border-radius: 1.25rem !important; /* consistent 20px corners */
+  border: 1px solid rgba(212, 175, 55, 0.15) !important; /* gold-beige premium border */
+  box-shadow: 0 4px 20px -2px rgba(7, 42, 58, 0.02) !important; /* ultra-soft depth */
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.card-standard:hover,
+div[class*="bg-white"][class*="border"][class*="rounded-"]:hover,
+div[class*="bg-white/"][class*="border"][class*="rounded-"]:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 16px 30px -8px rgba(7, 42, 58, 0.08) !important;
+}
+
+/* 9. Circle Icon Containers (56px) */
+.hwh-icon-container,
+div[class*="rounded-full"][class*="w-12"][class*="h-12"],
+div[class*="rounded-full"][class*="w-14"][class*="h-14"],
+div[class*="rounded-full"][class*="w-16"][class*="h-16"] {
+  width: 3.5rem !important; /* 56px */
+  height: 3.5rem !important; /* 56px */
+  border-radius: 9999px !important;
+  background-color: rgba(212, 175, 55, 0.1) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  color: var(--color-gold) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 1.25rem !important;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Standardize Icon Elements inside standard circles */
+div[class*="rounded-full"] svg,
+.hwh-icon-container svg {
+  width: 1.5rem !important; /* 24px */
+  height: 1.5rem !important;
+  stroke-width: 1.5px !important;
+}
+
+/* 10. Enforce Smooth Slow-Sip Transition Language */
+.transition-all, .transition, .transition-transform, .transition-colors {
+  transition-duration: 400ms !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+

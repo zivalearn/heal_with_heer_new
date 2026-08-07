@@ -1,0 +1,357 @@
+export interface ConstellationArchetype {
+  id: number;
+  roman: string;
+  title: string;
+  subtitle: string;
+  quote: string;
+  coreLesson: string;
+  shadowPattern: string;
+  lightExpression: string;
+  realLifeReflection: string;
+  symbol: 'Lotus' | 'Infinity' | 'Moon' | 'Compass' | 'Star' | 'Sun';
+  image: string;
+  x: number; // percentage width
+  y: number; // percentage height
+}
+
+export const CONSTELLATION_NODES: ConstellationArchetype[] = [
+  {
+    id: 0,
+    roman: "0",
+    title: "The Fool",
+    subtitle: "Archetype of the Pure Soul",
+    quote: "Trust the step into the unknown; the ground will rise to meet you.",
+    coreLesson: "The journey begins with complete emptiness and total trust. True wisdom is knowing when to let go of prior knowledge to embrace pure experience.",
+    shadowPattern: "Recklessness, denial of consequences, or paralysis born of the fear of looking foolish.",
+    lightExpression: "Unconditioned faith, spontaneity, joy of starting over, and an open heart.",
+    realLifeReflection: "The Fool appears when you are standing on the edge of a major life transition—a career shift, a new love, or a spiritual rebirth. It asks you to leap without demanding a guarantee.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+    x: 18,
+    y: 22
+  },
+  {
+    id: 1,
+    roman: "I",
+    title: "The Magician",
+    subtitle: "Archetype of Conscious Will",
+    quote: "As above, so below; you are the bridge between vision and reality.",
+    coreLesson: "You possess all the elements required for creation—intellect, passion, emotion, and action. Your task is to align and channel them.",
+    shadowPattern: "Manipulation, scattered focus, untapped potential, or using talent for selfish ends.",
+    lightExpression: "Focussed intention, resourcefulness, mastery of skills, and conscious manifestation.",
+    realLifeReflection: "The Magician speaks of starting a focused project, expressing your unique voice, or realizing that you already have the tools to create a deep transformation.",
+    symbol: "Infinity",
+    image: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&q=80&w=600",
+    x: 32,
+    y: 15
+  },
+  {
+    id: 2,
+    roman: "II",
+    title: "The High Priestess",
+    subtitle: "Archetype of Sacred Intuition",
+    quote: "The answers you seek do not reside in the world; they wait behind the veil.",
+    coreLesson: "Wisdom is not active searching, but receptive listening. Stand in the quiet, and allow the hidden currents to speak.",
+    shadowPattern: "Ignoring your gut feelings, keeping destructive secrets, or hiding from reality.",
+    lightExpression: "Deep intuitive knowing, divine timing, trusting dreams, and quiet self-possession.",
+    realLifeReflection: "This card shows up when external chaos is trying to force an immediate answer. It invites you to retreat into your inner sanctuary and trust the silence.",
+    symbol: "Moon",
+    image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=600",
+    x: 48,
+    y: 10
+  },
+  {
+    id: 3,
+    roman: "III",
+    title: "The Empress",
+    subtitle: "Archetype of Natural Abundance",
+    quote: "Allow yourself to mature in the warm embrace of the earth.",
+    coreLesson: "Creation cannot be rushed. It requires fertile ground, sensory nourishment, and a deep appreciation for the cycles of growth.",
+    shadowPattern: "Suffocating control, creative blocks, codependency, or neglecting self-care.",
+    lightExpression: "Unconditional love, artistic fertility, connection to nature, and sensory pleasure.",
+    realLifeReflection: "The Empress appears when you are in a season of rich birth—whether of a child, an art piece, or a new way of loving. It asks you to nurture yourself.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600",
+    x: 64,
+    y: 14
+  },
+  {
+    id: 4,
+    roman: "IV",
+    title: "The Emperor",
+    subtitle: "Archetype of Sovereign Order",
+    quote: "Structure is not a cage; it is the skeleton that supports your freedom.",
+    coreLesson: "Sovereignty is the ability to protect and organize your territory with wise authority, establishing healthy, kind boundaries.",
+    shadowPattern: "Rigidity, authoritarian control, defensiveness, or lack of personal discipline.",
+    lightExpression: "Clear boundaries, stable foundations, protective leadership, and strategic wisdom.",
+    realLifeReflection: "The Emperor asks you to organize your life, step into your authority, and define what you will and will not allow into your sacred space.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=600",
+    x: 78,
+    y: 20
+  },
+  {
+    id: 5,
+    roman: "V",
+    title: "The Hierophant",
+    subtitle: "Archetype of Sacred Practice",
+    quote: "Connect your temporary life with the timeless currents of lineage.",
+    coreLesson: "True spirituality is supported by grounding rituals and the wisdom of mentors who have walked the path before you.",
+    shadowPattern: "Blind dogmatism, conformity to outdated rules, or rebellion against all guidance.",
+    lightExpression: "Mentorship, spiritual alignment, daily ritual, and honoring sacred structures.",
+    realLifeReflection: "The Hierophant is present when you are entering a structured course of study, aligning with a spiritual community, or creating a daily ritual.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=600",
+    x: 88,
+    y: 32
+  },
+  {
+    id: 6,
+    roman: "VI",
+    title: "The Lovers",
+    subtitle: "Archetype of Divine Alignment",
+    quote: "Choose with your soul, not with your convenience.",
+    coreLesson: "Harmony is the meeting of two sovereign wholes. Choices made in alignment with your deepest values lead to perfect resonance.",
+    shadowPattern: "Inner conflict, choosing ease over integrity, or codependent projection.",
+    lightExpression: "Conscious connection, integrated dualities, shared values, and deep attraction.",
+    realLifeReflection: "This card appears when you face a major decision that tests your values, or when a relationship invites you to merge without losing your identity.",
+    symbol: "Star",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600",
+    x: 86,
+    y: 48
+  },
+  {
+    id: 7,
+    roman: "VII",
+    title: "The Chariot",
+    subtitle: "Archetype of Directed Will",
+    quote: "Harness the opposing currents of your mind and guide them to your destiny.",
+    coreLesson: "Victory is not about defeating obstacles, but integrating opposing forces to move forward with unshakeable focus.",
+    shadowPattern: "Aggressive control, burnout, directionless movement, or hiding vulnerability.",
+    lightExpression: "Determination, emotional control, willpower, and purposeful victory.",
+    realLifeReflection: "The Chariot calls you to resolve inner doubts and steer your life with confidence, especially when facing conflicting demands.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&q=80&w=600",
+    x: 76,
+    y: 64
+  },
+  {
+    id: 8,
+    roman: "VIII",
+    title: "Strength",
+    subtitle: "Archetype of Quiet Courage",
+    quote: "The fiercest beasts are not conquered by the sword, but by a gentle touch.",
+    coreLesson: "True power is silent and patient. It is the ability to hold space for your wild, instinctual nature with love and compassion.",
+    shadowPattern: "Suppressed rage, raw impulse, self-doubt, or using brute force over grace.",
+    lightExpression: "Inner fortitude, patience, gentle mastery, and integrated instincts.",
+    realLifeReflection: "Strength emerges when you are navigating a prolonged emotional trial. It reminds you that your capacity to endure comes from love, not armor.",
+    symbol: "Infinity",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600",
+    x: 64,
+    y: 78
+  },
+  {
+    id: 9,
+    roman: "IX",
+    title: "The Hermit",
+    subtitle: "Archetype of Inner Wisdom",
+    quote: "The light you seek is already burning inside your own lantern.",
+    coreLesson: "To find your true path, you must occasionally retreat from the noise of the world. Solitude is the crucible of self-knowledge.",
+    shadowPattern: "Isolation, loneliness, refusing to share your light, or emotional withdrawal.",
+    lightExpression: "Deep self-reflection, spiritual sanctuary, inner guidance, and quiet contemplation.",
+    realLifeReflection: "The Hermit appears when it is time for a solo retreat or a period of deep self-study. It asks you to trust your own inner lantern over external expectations.",
+    symbol: "Star",
+    image: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=600",
+    x: 48,
+    y: 84
+  },
+  {
+    id: 10,
+    roman: "X",
+    title: "Wheel of Fortune",
+    subtitle: "Archetype of Evolutionary Cycles",
+    quote: "This too shall pass; stand centered at the axis of the wheel.",
+    coreLesson: "Ups and downs are the natural breath of the cosmos. True peace is found not by stopping the wheel, but by remaining centered at the hub.",
+    shadowPattern: "Resisting natural cycles, feeling victimized, or clinging to temporary states.",
+    lightExpression: "Synchronicity, sudden turns of luck, alignment with destiny, and grace in transition.",
+    realLifeReflection: "The Wheel of Fortune is present when rapid, unexpected changes are occurring. It asks you to adapt with trust rather than trying to force control.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=600",
+    x: 32,
+    y: 78
+  },
+  {
+    id: 11,
+    roman: "XI",
+    title: "Justice",
+    subtitle: "Archetype of Truth and Balance",
+    quote: "The scales of the universe always balance in the light of absolute truth.",
+    coreLesson: "Every action triggers an equivalent reaction. Living with total integrity means aligning your decisions with cosmic fairness.",
+    shadowPattern: "Self-deception, avoidance of accountability, unfair bias, or moral indecision.",
+    lightExpression: "Uncompromising honesty, karmic clarity, balanced judgment, and accountability.",
+    realLifeReflection: "Justice appears when you are signing contracts, resolving conflicts, or facing a choice where you must speak and live the absolute truth.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600",
+    x: 18,
+    y: 66
+  },
+  {
+    id: 12,
+    roman: "XII",
+    title: "The Hanged Man",
+    subtitle: "Archetype of Sacred Surrender",
+    quote: "When the world is upside down, the only way forward is surrender.",
+    coreLesson: "By letting go of control and viewing life from an inverted perspective, you find an unshakeable, luminous peace.",
+    shadowPattern: "Martyrdom, stagnation, spiritual bypass, or resisting necessary surrender.",
+    lightExpression: "Surrender, new perspective, letting go, and peaceful waiting.",
+    realLifeReflection: "This card shows up when you feel completely stuck. It tells you that this pause is not a punishment, but a sacred invitation to release control.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=300",
+    x: 10,
+    y: 50
+  },
+  {
+    id: 13,
+    roman: "XIII",
+    title: "Death",
+    subtitle: "Archetype of Rebirth",
+    quote: "The autumn leaf must fall so the spring flower can bloom.",
+    coreLesson: "Nothing can be reborn until it is fully allowed to die. Decay is the necessary precursor to spectacular new beginnings.",
+    shadowPattern: "Fear of change, carrying rotting baggage, or resisting natural endings.",
+    lightExpression: "Deep transformation, shedding the old, clearing the path, and spiritual rebirth.",
+    realLifeReflection: "Death appears when a major chapter of your life—a relationship, job, or belief system—is drawing to a close. Let it go with grace.",
+    symbol: "Moon",
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=300",
+    x: 12,
+    y: 34
+  },
+  {
+    id: 14,
+    roman: "XIV",
+    title: "Temperance",
+    subtitle: "Archetype of Sacred Alchemy",
+    quote: "Blend the fires of passion with the waters of emotion to find the golden mean.",
+    coreLesson: "True healing is an alchemical process of slowly blending dualities—patience, moderation, and cosmic integration.",
+    shadowPattern: "Excess, emotional volatile swings, impatience, or feeling fragmented.",
+    lightExpression: "Inner harmony, balance, steady healing, and alchemical synthesis.",
+    realLifeReflection: "Temperance appears when you are recovering from a crisis or storm. It asks you to move slowly, avoid extremes, and integrate your lessons gently.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=300",
+    x: 25,
+    y: 38
+  },
+  {
+    id: 15,
+    roman: "XV",
+    title: "The Devil",
+    subtitle: "Archetype of Shadow Patterns",
+    quote: "The chains that bind you are unlocked; you have only to step out.",
+    coreLesson: "We are bound only by the illusions, attachments, and shadow patterns we refuse to look at directly with loving awareness.",
+    shadowPattern: "Addiction, self-sabotage, obsession, or feeling powerless to change.",
+    lightExpression: "Shadow illumination, reclaiming personal power, and healthy playfulness.",
+    realLifeReflection: "This archetype reveals where you are limiting yourself through toxic habits or self-doubt. It reminds you that the keys to your freedom are in your hand.",
+    symbol: "Infinity",
+    image: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&q=80&w=300",
+    x: 38,
+    y: 45
+  },
+  {
+    id: 16,
+    roman: "XVI",
+    title: "The Tower",
+    subtitle: "Archetype of Sudden Liberation",
+    quote: "The structures built on illusions must break so that truth can breathe.",
+    coreLesson: "When we refuse to dismantle outdated, false structures in our lives, the universe sends a bolt of lightning to set us free.",
+    shadowPattern: "Fear of disaster, clinging to ruin, or avoiding necessary breakthroughs.",
+    lightExpression: "Sudden clarity, absolute truth, liberation, and rapid breakthrough.",
+    realLifeReflection: "The Tower appears during periods of sudden, shocking change. It is painful, but it completely clears the ground for a solid, authentic foundation.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=300",
+    x: 52,
+    y: 48
+  },
+  {
+    id: 17,
+    roman: "XVII",
+    title: "The Star",
+    subtitle: "Archetype of Divine Hope",
+    quote: "Breathe, child; you are standing in the warm spotlight of the cosmos.",
+    coreLesson: "After the storm comes the serene silence of healing. Allow your soul to be bathed in the restorative starlight of hope.",
+    shadowPattern: "Despair, isolation, lack of faith, or refusal to rest and heal.",
+    lightExpression: "Renewal, deep healing, serenity, cosmic protection, and absolute trust.",
+    realLifeReflection: "The Star is a beautiful sign of recovery. It appears when you are safe to open your heart again, trust the flow, and let your light shine.",
+    symbol: "Star",
+    image: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=600",
+    x: 66,
+    y: 45
+  },
+  {
+    id: 18,
+    roman: "XVIII",
+    title: "The Moon",
+    subtitle: "Archetype of Subconscious Depths",
+    quote: "Walk through the mists of the night without fear of the dark.",
+    coreLesson: "The mists of illusion are a fertile womb. Deep intuition requires navigating mystery and integrating your subconscious shadow.",
+    shadowPattern: "Anxiety, self-deception, paranoia, or feeling lost in emotional oceans.",
+    lightExpression: "Psychic flow, vivid dreams, deep instinct, and shadow integration.",
+    realLifeReflection: "The Moon appears when plans are unclear and you must rely entirely on your gut feelings. It asks you to respect your dreams and instincts.",
+    symbol: "Moon",
+    image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=600",
+    x: 58,
+    y: 32
+  },
+  {
+    id: 19,
+    roman: "XIX",
+    title: "The Sun",
+    subtitle: "Archetype of Radiant Vitality",
+    quote: "Radiate your light without asking if the world is ready for your shine.",
+    coreLesson: "Absolute joy, clarity, and abundance are your birthright. Celebrate your presence and share your warmth unconditionally.",
+    shadowPattern: "Hidden light, temporary lack of clarity, or superficial optimism.",
+    lightExpression: "Vibrant health, clarity, playful success, and authentic expression.",
+    realLifeReflection: "The Sun is an ultimate blessing. It appears when success, absolute clarity, and happiness are bathing your path. Stand fully in the light.",
+    symbol: "Sun",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600",
+    x: 42,
+    y: 28
+  },
+  {
+    id: 20,
+    roman: "XX",
+    title: "Judgement",
+    subtitle: "Archetype of Cosmic Awakening",
+    quote: "Listen to the clarion call of your soul and rise to your higher destiny.",
+    coreLesson: "An awakening is a call to integrate all past experiences, forgive yourself, and step into a higher level of consciousness.",
+    shadowPattern: "Self-doubt, ignoring your true calling, guilt, or repeating old cycles.",
+    lightExpression: "Spiritual calling, absolute self-forgiveness, clarity of purpose, and rebirth.",
+    realLifeReflection: "Judgement appears when you face a defining crossroad where you must answer your soul's calling and shed past regrets forever.",
+    symbol: "Compass",
+    image: "https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&q=80&w=300",
+    x: 28,
+    y: 56
+  },
+  {
+    id: 21,
+    roman: "XXI",
+    title: "The World",
+    subtitle: "Archetype of Cosmic Wholeness",
+    quote: "The dancer and the dance are one; you have arrived at the center of all things.",
+    coreLesson: "Every experience you have lived is a thread in a gorgeous, coherent pattern. You are complete, whole, and ready for the next spiral.",
+    shadowPattern: "Lack of closure, creative stagnation, or refusing to take the final leap.",
+    lightExpression: "Completion, integration, absolute triumph, and global alignment.",
+    realLifeReflection: "The World appears when you have successfully closed a massive chapter of growth. Celebrate your evolution and step forward with deep peace.",
+    symbol: "Lotus",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600",
+    x: 48,
+    y: 64
+  }
+];
+
+export const CONSTELLATION_CONNECTIONS = [
+  // Outer Ring
+  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 0],
+  // Inner Structure
+  [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 14],
+  // Sacred Bridges
+  [2, 19], [9, 21], [21, 20], [20, 15], [16, 21], [17, 7], [0, 15], [5, 18]
+];
